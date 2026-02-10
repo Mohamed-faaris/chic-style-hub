@@ -24,7 +24,7 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/40 backdrop-blur-xl border-b border-border/30 shadow-sm">
         <div className="container-wide flex items-center justify-between h-16 sm:h-20">
           {/* Mobile menu */}
           <button className="lg:hidden" onClick={() => setMobileOpen(true)}>
