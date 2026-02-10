@@ -4,10 +4,17 @@ import { motion } from "framer-motion";
 import { products } from "@/data/products";
 import ProductCard from "@/components/shop/ProductCard";
 import heroImage from "@/assets/hero-image.jpg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Index = () => {
   const [email, setEmail] = useState("");
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   const trending = products.filter((p) => p.isTrending).slice(0, 8);
   const newArrivals = products.filter((p) => p.isNew).slice(0, 4);
 
@@ -22,7 +29,12 @@ const Index = () => {
     <main>
       {/* Hero */}
       <section className="relative h-[85vh] overflow-hidden">
-        <img src={heroImage} alt="Fashion campaign" className="absolute inset-0 w-full h-full object-cover" />
+        <img
+          src={heroImage}
+          alt="Fashion campaign"
+          className="absolute inset-0 w-full h-full object-cover will-change-transform"
+          style={{ transform: `translateY(${scrollY * 0.35}px) scale(${1 + scrollY * 0.0002})` }}
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/60 to-foreground/20" />
         <div className="relative container-wide h-full flex items-center">
           <motion.div
@@ -30,6 +42,7 @@ const Index = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="max-w-xl text-primary-foreground"
+            style={{ transform: `translateY(${scrollY * -0.15}px)`, opacity: 1 - scrollY * 0.002 }}
           >
             <p className="text-xs font-medium tracking-[0.3em] uppercase mb-4 opacity-80">Spring / Summer 2026</p>
             <h1 className="font-display text-5xl sm:text-6xl md:text-7xl font-light leading-tight mb-6">
