@@ -28,7 +28,7 @@ const Index = () => {
   return (
     <main>
       {/* Hero */}
-      <section className="relative h-[85vh] overflow-hidden">
+      <section className="relative h-screen overflow-hidden -mt-16 sm:-mt-20">
         <img
           src={heroImage}
           alt="Fashion campaign"
