@@ -63,7 +63,7 @@ const Navbar = () => {
             <Link to="/wishlist" className="relative hover:opacity-60 transition-opacity">
               <Heart size={20} />
               {wishlistTotal > 0 && (
-                <span className="absolute -top-2 -right-2 w-4 h-4 bg-accent text-accent-foreground text-[10px] font-bold flex items-center justify-center rounded-full">
+                <span className="absolute -top-2 -right-2 w-4 h-4 bg-accent text-white text-[10px] font-bold flex items-center justify-center rounded-full">
                   {wishlistTotal}
                 </span>
               )}
