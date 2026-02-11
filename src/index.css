@@ -130,12 +130,12 @@
   }
 
   .nav-link {
-    @apply relative text-xs font-medium tracking-[0.2em] uppercase text-foreground/80 transition-colors hover:text-foreground;
+    @apply relative text-xs font-medium tracking-[0.2em] uppercase opacity-80 transition-all hover:opacity-100;
   }
 
   .nav-link::after {
     content: '';
-    @apply absolute bottom-0 left-0 h-px w-0 bg-foreground transition-all duration-300;
+    @apply absolute bottom-0 left-0 h-px w-0 bg-current transition-all duration-300;
   }
 
   .nav-link:hover::after {
