@@ -34,7 +34,7 @@ const Navbar = () => {
 
   return (
     <>
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isHome && !scrolled ? "bg-transparent border-transparent shadow-none" : "bg-background/40 backdrop-blur-xl border-b border-border/30 shadow-sm"}`}>
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isHome && !scrolled ? "bg-transparent border-transparent shadow-none text-white" : "bg-white/90 backdrop-blur-xl border-b border-border/30 shadow-sm text-foreground"}`}>
         <div className="w-full px-6 sm:px-10 lg:px-16 flex items-center justify-between h-16 sm:h-20">
           {/* Mobile menu */}
           <button className="lg:hidden" onClick={() => setMobileOpen(true)}>
