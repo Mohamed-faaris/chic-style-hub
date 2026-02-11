@@ -33,7 +33,7 @@ const Index = () => {
           src={heroImage}
           alt="Fashion campaign"
           className="absolute inset-0 w-full h-full object-cover will-change-transform"
-          style={{ transform: `translateY(${scrollY * 0.35}px) scale(${1 + scrollY * 0.0002})` }}
+          style={{ transform: `scale(${1.1 + scrollY * 0.0003}) translateY(${scrollY * 0.2}px)` }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/60 to-foreground/20" />
         <div className="relative container-wide h-full flex items-center">
